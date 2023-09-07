@@ -1,6 +1,5 @@
-import Link from "next/link";
-
 import { Button } from "../../UI";
+import { AddressIcon, DateIcon, ArrowRightIcon } from "../../icons";
 import style from "./EventItem.module.css";
 
 export function EventItem({ id, title, location, date, image }) {
@@ -19,9 +18,11 @@ export function EventItem({ id, title, location, date, image }) {
         <div className={style.summary}>
           <h2>{title}</h2>
           <div className={style.date}>
+            <DateIcon />
             <time>{formattedeDate}</time>
           </div>
           <div className={style.address}>
+            <AddressIcon />
             <address>{formattedAddress}</address>
           </div>
         </div>
@@ -34,7 +35,10 @@ export function EventItem({ id, title, location, date, image }) {
               },
             }}
           >
-            Explore Event
+            <span>Explore Event</span>
+            <span className={style.icon}>
+              <ArrowRightIcon />
+            </span>
           </Button>
         </div>
       </div>
