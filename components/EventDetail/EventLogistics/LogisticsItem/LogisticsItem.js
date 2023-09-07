@@ -1,4 +1,4 @@
-import style from "./LogisticsItem.module.css";
+import { item, icon, content } from "./LogisticsItem.module.css";
 
 export function LogisticsItem({ icon: Icon, children }) {
   return (

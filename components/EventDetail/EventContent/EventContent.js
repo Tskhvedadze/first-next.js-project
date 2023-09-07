@@ -1,5 +1,5 @@
-import style from "./EventContent.module.css";
+import { content } from "./EventContent.module.css";
 
 export function EventContent({ children }) {
-  return <section className={style.content}>{children}</section>;
+  return <section className={content}>{children}</section>;
 }
