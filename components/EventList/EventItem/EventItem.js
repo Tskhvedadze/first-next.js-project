@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { Button } from "../../UI";
 import style from "./EventItem.module.css";
 
 export function EventItem({ id, title, location, date, image }) {
@@ -10,7 +11,6 @@ export function EventItem({ id, title, location, date, image }) {
   });
 
   const formattedAddress = location.replace(", ", "\n");
-  const exploreLink = `/events/${id}`;
 
   return (
     <li className={style.item}>
@@ -26,11 +26,8 @@ export function EventItem({ id, title, location, date, image }) {
           </div>
         </div>
         <div className={style.actions}>
-          {/* <Link href={exploreLink}>Explore Event</Link> */}
-
-          {/* Seccond Solution */}
-          <Link
-            href={{
+          <Button
+            link={{
               pathname: "/events/[id]",
               query: {
                 id,
@@ -38,7 +35,7 @@ export function EventItem({ id, title, location, date, image }) {
             }}
           >
             Explore Event
-          </Link>
+          </Button>
         </div>
       </div>
     </li>
