@@ -30,7 +30,7 @@ function FilteredEventsPage() {
           <p className="center">Invalid filter. please adjust your valuse!</p>
         </ErrorAlert>
         <div className="center">
-          <Button link={"/events"}>SHow All Events</Button>
+          <Button link={"/events"}>Show All Events</Button>
         </div>
       </>
     );
