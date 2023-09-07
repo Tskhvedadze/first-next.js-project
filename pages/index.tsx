@@ -6,7 +6,7 @@ function HomePage() {
   const router = useRouter();
   const featuredEvents = getFeaturedEvents();
 
-  const findEventHandler = (year, month) => {
+  const findEventHandler = (year: number, month: number) => {
     router.push(`/events/${year}/${month}`);
   };
 

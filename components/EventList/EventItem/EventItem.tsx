@@ -1,8 +1,10 @@
+import { DummyTypes } from "../../../types";
 import { Button } from "../../UI";
 import { AddressIcon, DateIcon, ArrowRightIcon } from "../../icons";
-import style from "./EventItem.module.css";
 
-export function EventItem({ id, title, location, date, image }) {
+import s from "./EventItem.module.css";
+
+export function EventItem({ id, title, location, date, image }: DummyTypes) {
   const formattedeDate = new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",
@@ -12,21 +14,21 @@ export function EventItem({ id, title, location, date, image }) {
   const formattedAddress = location.replace(", ", "\n");
 
   return (
-    <li className={style.item}>
+    <li className={s.item}>
       <img src={`/${image}`} alt={title} />
-      <div className={style.content}>
-        <div className={style.summary}>
+      <div className={s.content}>
+        <div className={s.summary}>
           <h2>{title}</h2>
-          <div className={style.date}>
+          <div className={s.date}>
             <DateIcon />
             <time>{formattedeDate}</time>
           </div>
-          <div className={style.address}>
+          <div className={s.address}>
             <AddressIcon />
             <address>{formattedAddress}</address>
           </div>
         </div>
-        <div className={style.actions}>
+        <div className={s.actions}>
           <Button
             link={{
               pathname: "/events/[id]",
@@ -36,7 +38,7 @@ export function EventItem({ id, title, location, date, image }) {
             }}
           >
             <span>Explore Event</span>
-            <span className={style.icon}>
+            <span className={s.icon}>
               <ArrowRightIcon />
             </span>
           </Button>

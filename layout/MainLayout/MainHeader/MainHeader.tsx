@@ -1,14 +1,14 @@
 import Link from "next/link";
 
-import style from "./MainHeader.module.css";
+import s from "./MainHeader.module.css";
 
 export function MainHeader() {
   return (
-    <header className={style.header}>
-      <div className={style.logo}>
+    <header className={s.header}>
+      <div className={s.logo}>
         <Link href={"/"}>NextEvents</Link>
       </div>
-      <nav className={style.navigation}>
+      <nav className={s.navigation}>
         <ul>
           <li>
             <Link href={"/events"}>Browse All Events</Link>

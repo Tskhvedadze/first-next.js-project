@@ -12,9 +12,8 @@ function FilteredEventsPage() {
     return <p className="center">Loading...</p>;
   }
 
-  const [year, month] = filteredData;
-  const numYear = Number(year);
-  const numMonth = Number(month);
+  const numYear = Number(filteredData[0]);
+  const numMonth = Number(filteredData[1]);
 
   if (
     isNaN(numYear) ||
@@ -30,7 +29,14 @@ function FilteredEventsPage() {
           <p className="center">Invalid filter. please adjust your valuse!</p>
         </ErrorAlert>
         <div className="center">
-          <Button link={"/events"}>Show All Events</Button>
+          <Button
+            link={{
+              pathname: "/events",
+              query: {},
+            }}
+          >
+            Show All Events
+          </Button>
         </div>
       </>
     );
@@ -48,7 +54,14 @@ function FilteredEventsPage() {
           <p className="center">No events found for the chosen filter!</p>
         </ErrorAlert>
         <div className="center">
-          <Button link={"/events"}>Show All Events</Button>
+          <Button
+            link={{
+              pathname: "/events",
+              query: {},
+            }}
+          >
+            Show All Events
+          </Button>
         </div>
       </>
     );
